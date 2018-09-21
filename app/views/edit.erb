@@ -1,0 +1,12 @@
+<%# use RESTful routes and renders a form to edit a single recipe %>
+<%# should update the entry in the database with the changes, %>
+<%# and then redirect to the recipe show page %>
+
+<h2>Edit Recipe No. <%=@recipe.id %></h2>
+<form method="post" action="/recipes/<%=@recipe.id %>">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <p>Recipe Name: <input type="text" name = "name" value="<%=@recipe.name %>"></p>
+    <p>Ingredients: <input type="text" name="ingredients" value="<%=@recipe.ingredients %>"></p>
+    <p>Cook Time: <input type="text" name="cook_time" value="<%=@recipe.cook_time %>"> minutes</p>
+    <input type="submit" name="submit" value="submit">
+</form>
